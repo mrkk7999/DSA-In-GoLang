@@ -34,7 +34,7 @@ func InitLinkedList() *node {
 }
 
 func (head *node) reverseLinkedList() *node {
-	dummyNode := &node{}
+	var dummyNode *node
 	for head != nil {
 		next := head.nextNode
 		head.nextNode = dummyNode
