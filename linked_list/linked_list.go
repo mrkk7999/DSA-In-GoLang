@@ -22,25 +22,22 @@ func initWithHead(ele interface{}) *node {
 		nextNode: nil,
 	}
 }
-
+func InitLinkedList() *node {
+	head := initEmptyList()
+	head = initWithHead(0)
+	tail := head
+	for i := 1; i < 10; i++ {
+		tail.nextNode = initWithHead(i)
+		tail = tail.nextNode
+	}
+	return head
+}
 func main() {
-	singleList := initEmptyList()
-	singleList = initWithHead("Name :- ")
-	fmt.Println(singleList.nodeVal)
-	//tempNode := singleList
-	//// tempNode.nodeVal = "Mr."
-	//tempNode.nextNode = initWithHead("Mr.")
-	//tempNode = tempNode.nextNode
-	//tempNode.nextNode = initWithHead("Kiran")
-	//tempNode = tempNode.nextNode
-	//tempNode.nextNode = initWithHead("Arun")
-	//tempNode = tempNode.nextNode
-	//tempNode.nextNode = initWithHead("Kshirsagar")
-	//tempNode = tempNode.nextNode
-	//temp := singleList
-	//for temp.nextNode != nil {
-	//	fmt.Print(temp.nodeVal, "\t")
-	//	temp = temp.nextNode
-	//}
-	//fmt.Print(temp.nodeVal)
+	head := InitLinkedList()
+	currentNode := head
+	for currentNode.nextNode != nil {
+		fmt.Print(currentNode.nodeVal, "\t")
+		currentNode = currentNode.nextNode
+	}
+	fmt.Print(currentNode.nodeVal)
 }
