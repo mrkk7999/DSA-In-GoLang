@@ -40,4 +40,5 @@ func main() {
 		currentNode = currentNode.nextNode
 	}
 	fmt.Print(currentNode.nodeVal)
+	fmt.Println("Printing from github")
 }
